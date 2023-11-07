@@ -1,0 +1,230 @@
+<!DOCTYPE html
+		  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type"
+		  content="text/html; charset=utf-8" />
+
+	<title>Petropol | Assinatura de E-mail</title>
+	<!-- CSS -->
+	<link rel="stylesheet"
+		  type="text/css"
+		  href="css/style.css" />
+
+	<style>
+		font {
+			line-height: 17px
+		}
+	</style>
+
+</head>
+
+<body ng-app>
+
+	<div class="wrap">
+		<header class="header">
+			<button type="button"
+					id="changeColor">Night Mode</button>
+			<h1 class="page-title">Assinatura de E-mail<br> <span style="color: #FDAF17">Petropol</span></h1>
+			<h2 class="page-subtitle">Substitua sua antiga assinatura pelo novo modelo. <br><br> <b>São apenas 5
+					passos</b>:</h2>
+			<p class="text-explain"></p>
+		</header>
+		<div class="content">
+			<ul class="list-steps">
+				<li><span>1</span>Preencha os campos abaixo com as informações desejadas</li>
+				<li><span>2</span>Após finalizar, clique no botão para copiar a assinatura</li>
+				<li><span>3</span>Vá até seu <i>client</i> de e-mail e cole-a</li>
+				<li><span>4</span>Salve</li>
+				<li><span>5</span>Parabéns! Agora, você tem uma nova assinatura configurada.</li>
+			</ul>
+
+			<ul class="list-inputs">
+				<li>
+					<label>Seu nome: </label>
+					<input type="text"
+						   ng-model="name"
+						   placeholder="Seu nome"
+						   maxlength="20" />
+				</li>
+				<li>
+					<label>Departamento: </label>
+					<input type="text"
+						   ng-model="depart"
+						   placeholder="Departamento"
+						   maxlength="40" />
+				</li>
+				<li>
+					<label>Celular: </label>
+					<input type="tel"
+						   ng-model="celular"
+						   data-mask="+00 00 00000-0000"
+						   placeholder="Número do seu celular"
+						   maxlength="35" />
+				</li>
+				<li>
+					<label>Telefone: </label>
+					<input type="tel"
+						   ng-model="telefone"
+						   data-mask="+00 00 0000-0000"
+						   placeholder="Número do seu telefone"
+						   maxlength="35" />
+				</li>
+				<li>
+					<label>Email: </label>
+					<input type="text"
+						   ng-model="email"
+						   placeholder="meuemail@exemplo.com.br"
+						   maxlength="33" />
+				</li>
+
+			</ul>
+
+		</div>
+
+		<div class="output-signature">
+			<br />
+
+			<!-- Inicio da tabela aqui -->
+			<table cellpadding="0"
+				   cellspacing="0"
+				   border="0"
+				   id="signature"
+				   bgcolor="#ffffff"
+				   style="border-collapse:collapse;">
+				<tr>
+					<td width="414"><a href="http://petropol.com.br/">
+							<img src="http://www.petropol.com.br/ass/img3/logo.jpg"
+								 width="414"
+								 height="166"
+								 alt="Petropol"
+								 title="Petropol"></a></td>
+					<td>
+						<table
+							   style="border-collapse:collapse;font-size:16px;font-family: 'Arial', 'Helvetica', sans-serif;color:#999999;">
+							<tr>
+								<td height="22"
+									colspan="2"
+									style="font-size:22px;color:#e20015;">
+									<b>{{name}}</b>
+								</td>
+							</tr>
+							<tr>
+								<td height="22"
+									colspan="2"
+									style="font-size:14px;">{{depart}}</td>
+							</tr>
+							<tr>
+								<td height="13"
+									colspan="2"></td>
+							</tr>
+							<tr ng-if="celular">
+								<td height="23"
+									width="19">
+									<img src="http://www.petropol.com.br/ass/img3/ico-tel.jpg"
+										 width="19"
+										 height="23"
+										 alt="Petropol"
+										 title="Petropol"
+										 draggable="false" />
+								</td>
+								<td valign="middle"
+									width="281">&nbsp;{{celular}}</td>
+							</tr>
+							<tr ng-if="telefone">
+								<td height="23"
+									width="19">
+									<img src="http://www.petropol.com.br/ass/img3/ico-cel.jpg"
+										 width="19"
+										 height="23"
+										 alt="Petropol"
+										 title="Petropol"
+										 draggable="false" />
+								</td>
+								<td valign="middle"
+									width="281">&nbsp;{{telefone}}</td>
+							</tr>
+							<tr>
+								<td height="12"
+									colspan="2"></td>
+							</tr>
+							<tr ng-if="email">
+								<td valign="middle"
+									colspan="2"
+									height="22">
+									<a href="mailto:{{email}}"
+									   style="color:#e20015; text-decoration:none">{{email}}</a>
+								</td>
+							</tr>
+							<tr>
+								<td valign="middle"
+									colspan="2">
+									<a href="www.petropol.com.br"
+									   style="color:#e20015; text-decoration:none">www.petropol.com.br</a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="16">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2"><img src="banner-footer-nypols-v2.jpg"
+							 width="714"
+							 height="109"
+							 colspan="2"></td>
+				</tr>
+			</table>
+
+			<!-- Fim da tabela aqui -->
+			<br />
+		</div>
+
+		<button type="button"
+				id="copy">Copiar nova Assinatura!</button>
+	</div>
+
+	<div class="success">
+		<p>Uhuul! Assinatura copiada para área de transferência!</p>
+	</div>
+
+	<!-- Javascript -->
+	<script src="js/angular.min.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.mask.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$("#copy").click(function () {
+				var ass = document.getElementById('signature');
+				var range = document.createRange();
+				range.selectNodeContents(ass);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+				document.execCommand('copy');
+				selection.removeAllRanges();
+
+				$(".success").stop().fadeIn(150).css('display', 'flex');
+
+				setTimeout(function () {
+					$(".success").stop().fadeOut(250);
+				}, 800)
+
+				return false;
+			});
+
+			$('#changeColor').click(function () {
+				$(this).remove();
+				$("body").css('background', '#2c3e50');
+				$(".list-steps, .page-subtitle, .page-title, select, .list-inputs label").css('color', '#f5f6fa');
+				$(".list-inputs input, .list-inputs select").css('border', 'none');
+				$("#copy").css('background', '#27ae60');
+			});
+		});
+	</script>
+</body>
+
+</html>
