@@ -5,12 +5,38 @@
 <head>
 	<meta http-equiv="Content-Type"
 		  content="text/html; charset=utf-8" />
-
+	<link rel="apple-touch-icon"
+		  sizes="180x180"
+		  href="img/favicon/apple-touch-icon.png">
+	<link rel="icon"
+		  type="image/png"
+		  sizes="32x32"
+		  href="img/favicon/favicon-32x32.png">
+	<link rel="icon"
+		  type="image/png"
+		  sizes="16x16"
+		  href="img/favicon/favicon-16x16.png">
+	<link rel="manifest"
+		  href="img/favicon/site.webmanifest">
+	<link rel="mask-icon"
+		  href="img/favicon/safari-pinned-tab.svg"
+		  color="#5bbad5">
+	<meta name="msapplication-TileColor"
+		  content="#000000">
+	<meta name="theme-color"
+		  content="#ffffff">
 	<title>Linha34 | Assinatura de E-mail</title>
 	<!-- CSS -->
 	<link rel="stylesheet"
 		  type="text/css"
 		  href="css/style.css" />
+	<link rel="preconnect"
+		  href="https://fonts.googleapis.com">
+	<link rel="preconnect"
+		  href="https://fonts.gstatic.com"
+		  crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		  rel="stylesheet">
 
 	<style>
 		font {
@@ -25,7 +51,7 @@
 	<div class="wrap">
 		<header class="header">
 			<!-- <button type="button" id="changeColor">Night Mode</button> -->
-			<h1 class="page-title">Assinatura de e-mail <span style="color: #6e6d6d">Linha34</span></h1>
+			<h1 class="page-title">Assinatura de e-mail <span style="color: #fff">Linha34</span></h1>
 			<h2 class="page-subtitle">Crie seu novo modelo. <br><br> <b>São apenas 5 passos</b>:</h2>
 			<p class="text-explain"></p>
 		</header>
@@ -33,14 +59,17 @@
 			<ul class="list-steps">
 				<li><span>1</span>Preencha os campos abaixo com as informações desejadas</li>
 				<li><span>2</span>Após finalizar, clique no botão para copiar a assinatura</li>
-				<li><span>3</span>Vá até seu <i>client</i> de e-mail e cole</li>
+				<li><span>3</span>Vá até seu <i>client</i> de e-mail e cole <a
+					   href="https://support.google.com/mail/answer/8395?hl=pt-br"
+					   target="blank"
+					   style="color: #fff">( Tutorial aqui )</a></li>
 				<li><span>4</span>Salve</li>
 				<li><span>5</span>Parabéns! Agora, você tem uma nova assinatura configurada.</li>
 			</ul>
 
 			<ul class="list-inputs">
 				<li>
-					<label>Cargo: (Editor | Gestor | Diretor) </label>
+					<label>Cargo: (Programador | Designer | Marketing) </label>
 					<input type="text"
 						   ng-model="depart"
 						   placeholder="Cargo"
@@ -62,14 +91,14 @@
 						   placeholder="11 98189-3041"
 						   maxlength="35" />
 				</li>
-				<li>
+				<!--<li>
 					<label>Celular sem espaços: </label>
 					<input type="tel"
 						   ng-model="telefone"
 						   data-mask="000000000000"
 						   placeholder="11981893041"
 						   maxlength="35" />
-				</li>
+				</li>-->
 				<li>
 					<label>Email: </label>
 					<input type="text"
@@ -112,11 +141,11 @@
 									<td>
 										<p
 										   style="font-family: Arial; line-height: 130.59%; font-weight: 400; letter-spacing: 1px; color: white; font-size: 18px;">
-											Sabrina Pasti
+											{{name}}
 										</p>
 										<p
 										   style="font-family: Arial; color: #7CCDE2; font-size: 14px; letter-spacing: 1px;">
-											Direção de arte</p>
+											{{depart}}</p>
 									</td>
 								</tr>
 							</table>
@@ -166,9 +195,9 @@
 													 height="12"
 													 alt=""
 													 style="display: inline-block; vertical-align: middle; margin-right: 4px;">
-												<a href="mailto:"
+												<a href="mailto:{{email}}"
 												   style="display: inline-block; vertical-align: middle; text-decoration: none; font-family: Arial; color: white; font-size: 10px; letter-spacing: 1px; margin-bottom: 1px;">
-													sabrina.pasti@linha34.com</a>
+													{{email}}</a>
 											</li>
 											<li style="margin-bottom: 3px;">
 												<img src="https://vectorlima.github.io/img/e-site.png"
@@ -188,7 +217,7 @@
 													 style="display: inline-block; vertical-align: middle; margin-right: 4px;">
 												<p
 												   style="display: inline-block; vertical-align: middle; text-decoration: none; font-family: Arial; color: white; font-size: 10px; letter-spacing: 1px; margin-bottom: 1px;">
-													+55 11 94609 4530</p>
+													&nbsp;{{celular}}</p>
 											</li>
 										</ul>
 									</td>
@@ -535,7 +564,7 @@
 	</div>
 
 	<div class="success">
-		<p>Uhuul! Assinatura copiada para área de transferência!</p>
+		<p>Sua assinatura copiada para área de transferência!</p>
 	</div>
 
 	<!-- Javascript -->
